@@ -12,7 +12,6 @@ bot.start((ctx) => ctx.reply(`Вітаю, ${ctx.message.from.first_name}! \n` +
     'Всю корисну інформацію, ти можеш знайти в нижньому меню. \n' +
     'Викликати його можна за допомогою команди /start, або ж інтерфейсу самого Telegram \n' +
     'Бережи себе!', Markup.keyboard([
-    ['Актуальні новини'],
     ['Адреси пунктів допомоги на кордоні', 'Адреси пунктів допомоги в Польщі'],
     ['Допомога громадянам України', 'Гарячі лінії'],
     ['Інфолінія для глухих','Медична допомога'],
@@ -585,96 +584,96 @@ bot.action('btn_37', async (ctx) => {
 
 })
 
+//
+// let date ;
+// let title ;
+// let intro ;
+//
+// let date1 ;
+// let title1 ;
+// let intro1 ;
+//
+//
+// let date2 ;
+// let title2 ;
+// let intro2 ;
+//
+//
+// (async () => {
+//     const browser = await puppeteer.launch();
+//     const page = await browser.newPage();
+//     await page.goto('https://www.gov.pl/web/mswia/aktualnosci');
+//
+//     const element = await page.waitForSelector('li:first-child .date');
+//     date = await element.evaluate(el => el.textContent);
+//
+//     const element1 = await page.waitForSelector('li:first-child .title');
+//     title = await element1.evaluate(el => el.textContent);
+//
+//     const element2 = await page.waitForSelector('li:first-child .intro');
+//     intro = await element2.evaluate(el => el.textContent);
+//
+//
+//     const element3 = await page.waitForSelector('li:nth-child(2) .date');
+//     date1 = await element3.evaluate(el => el.textContent);
+//
+//     const element4 = await page.waitForSelector('li:nth-child(2) .title');
+//     title1 = await element4.evaluate(el => el.textContent);
+//
+//     const element5 = await page.waitForSelector('li:nth-child(2) .intro');
+//     intro1 = await element5.evaluate(el => el.textContent);
+//
+//     const element6 = await page.waitForSelector('li:nth-child(3) .date');
+//     date2 = await element6.evaluate(el => el.textContent);
+//
+//     const element7 = await page.waitForSelector('li:nth-child(3) .title');
+//     title2 = await element7.evaluate(el => el.textContent);
+//
+//     const element8 = await page.waitForSelector('li:nth-child(3) .intro');
+//     intro2 = await element8.evaluate(el => el.textContent);
+//
+//     await browser.close();
+// })();
 
-let date ;
-let title ;
-let intro ;
+// bot.hears('Актуальні новини', async (ctx) => {
+//     await ctx.reply('Наразі відбвувається завантаження актуальних новин, наданих Міністерством внутрішніх справ та адміністрації \n' +
+//         '\n' +
+//         'Більше новин (також українською): https://www.gov.pl/web/mswia/aktualnosci', {disable_web_page_preview: true})
+//
+//     for (let i = 0; i <=10; i++){
+//         if (date && title && intro){
+//             await ctx.replyWithHTML(`Дата:<b>${date} </b> \n` +
+//                 `<b>🔺 ${title}</b>\n` +
+//                 `\n` +
+//                 `${intro}`)
+//             break
+//         }
+//     }
+//     await ctx.replyWithHTML( '<b>Більше новин (також українською) 👇</b>', Markup.inlineKeyboard([
+//         [Markup.button.callback('Завантажити', 'btn_38')]
+//     ]))
+// })
 
-let date1 ;
-let title1 ;
-let intro1 ;
-
-
-let date2 ;
-let title2 ;
-let intro2 ;
-
-
-(async () => {
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-    await page.goto('https://www.gov.pl/web/mswia/aktualnosci');
-
-    const element = await page.waitForSelector('li:first-child .date');
-    date = await element.evaluate(el => el.textContent);
-
-    const element1 = await page.waitForSelector('li:first-child .title');
-    title = await element1.evaluate(el => el.textContent);
-
-    const element2 = await page.waitForSelector('li:first-child .intro');
-    intro = await element2.evaluate(el => el.textContent);
-
-
-    const element3 = await page.waitForSelector('li:nth-child(2) .date');
-    date1 = await element3.evaluate(el => el.textContent);
-
-    const element4 = await page.waitForSelector('li:nth-child(2) .title');
-    title1 = await element4.evaluate(el => el.textContent);
-
-    const element5 = await page.waitForSelector('li:nth-child(2) .intro');
-    intro1 = await element5.evaluate(el => el.textContent);
-
-    const element6 = await page.waitForSelector('li:nth-child(3) .date');
-    date2 = await element6.evaluate(el => el.textContent);
-
-    const element7 = await page.waitForSelector('li:nth-child(3) .title');
-    title2 = await element7.evaluate(el => el.textContent);
-
-    const element8 = await page.waitForSelector('li:nth-child(3) .intro');
-    intro2 = await element8.evaluate(el => el.textContent);
-
-    await browser.close();
-})();
-
-bot.hears('Актуальні новини', async (ctx) => {
-    await ctx.reply('Наразі відбвувається завантаження актуальних новин, наданих Міністерством внутрішніх справ та адміністрації \n' +
-        '\n' +
-        'Більше новин (також українською): https://www.gov.pl/web/mswia/aktualnosci', {disable_web_page_preview: true})
-
-    for (let i = 0; i <=10; i++){
-        if (date && title && intro){
-            await ctx.replyWithHTML(`Дата:<b>${date} </b> \n` +
-                `<b>🔺 ${title}</b>\n` +
-                `\n` +
-                `${intro}`)
-            break
-        }
-    }
-    await ctx.replyWithHTML( '<b>Більше новин (також українською) 👇</b>', Markup.inlineKeyboard([
-        [Markup.button.callback('Завантажити', 'btn_38')]
-    ]))
-})
-
-bot.action('btn_38', async (ctx) => {
-    for (let i = 0; i <=10; i++){
-        if (date1 && title1 && intro1){
-            await ctx.replyWithHTML(`Дата:<b>${date1} </b> \n` +
-                `<b>🔺 ${title1}</b>\n` +
-                `\n` +
-                `${intro1}`)
-            break
-        }
-    }
-    for (let i = 0; i <=10; i++){
-        if (date2 && title2 && intro2){
-            await ctx.replyWithHTML(`Дата:<b>${date2} </b> \n` +
-                `<b>🔺 ${title2}</b>\n` +
-                `\n` +
-                `${intro2}`)
-            break
-        }
-    }
-    await ctx.reply('Більше новин (також українською): https://www.gov.pl/web/mswia/aktualnosci', {disable_web_page_preview: true})
-})
+// bot.action('btn_38', async (ctx) => {
+//     for (let i = 0; i <=10; i++){
+//         if (date1 && title1 && intro1){
+//             await ctx.replyWithHTML(`Дата:<b>${date1} </b> \n` +
+//                 `<b>🔺 ${title1}</b>\n` +
+//                 `\n` +
+//                 `${intro1}`)
+//             break
+//         }
+//     }
+//     for (let i = 0; i <=10; i++){
+//         if (date2 && title2 && intro2){
+//             await ctx.replyWithHTML(`Дата:<b>${date2} </b> \n` +
+//                 `<b>🔺 ${title2}</b>\n` +
+//                 `\n` +
+//                 `${intro2}`)
+//             break
+//         }
+//     }
+//     await ctx.reply('Більше новин (також українською): https://www.gov.pl/web/mswia/aktualnosci', {disable_web_page_preview: true})
+// })
 
 bot.launch()
